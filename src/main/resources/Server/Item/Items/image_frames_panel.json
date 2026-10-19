@@ -3,7 +3,7 @@
     "Name": "imageFrames.item.panel.name",
     "Description": "imageFrames.item.panel.description"
   },
-  "Category": "Blocks",
+  "Categories": ["Furniture.Furniture"],
   "ItemLevel": 1,
   "MaxStack": 64,
   "Icon": "Icons/ItemsGenerated/ImageFrames/Panel.png",
@@ -29,9 +29,6 @@
     },
     "BlockParticleSetId": "Wood",
     "BlockSoundSetId": "Wood",
-    "Flags": {
-      "IsUsable": true
-    },
     "Interactions": {
       "Use": "ImageFrames_Use"
     },

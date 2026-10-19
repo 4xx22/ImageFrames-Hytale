@@ -3,7 +3,7 @@
     "Name": "imageFrames.item.banner.name",
     "Description": "imageFrames.item.banner.description"
   },
-  "Category": "Blocks",
+  "Categories": ["Furniture.Furniture"],
   "ItemLevel": 1,
   "MaxStack": 64,
   "Icon": "Icons/ItemsGenerated/ImageFrames/Banner.png",
@@ -29,9 +29,6 @@
     },
     "BlockParticleSetId": "Wood",
     "BlockSoundSetId": "Cloth",
-    "Flags": {
-      "IsUsable": true
-    },
     "Interactions": {
       "Use": "ImageFrames_Use"
     },
