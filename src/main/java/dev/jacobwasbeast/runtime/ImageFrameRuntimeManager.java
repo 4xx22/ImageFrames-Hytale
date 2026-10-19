@@ -40,11 +40,11 @@ import java.util.logging.Level;
 import javax.imageio.ImageIO;
 
 public class ImageFrameRuntimeManager {
-    public static final String BASE_BLOCK_ID = "image_frames:frame";
+    public static final String BASE_BLOCK_ID = "image_frames_frame";
     public static final String SLIM_BLOCK_ID = "image_frames:slim_frame";
-    public static final String PANEL_BLOCK_ID = "image_frames:panel";
+    public static final String PANEL_BLOCK_ID = "image_frames_panel";
     public static final String PANEL_INVISIBLE_BLOCK_ID = "image_frames:panel_invisible";
-    public static final String BANNER_BLOCK_ID = "image_frames:banner";
+    public static final String BANNER_BLOCK_ID = "image_frames_banner";
     public static final String TILE_PREFIX = "ImageFrames_Tile_";
     private static final String AIR_BLOCK_ID = "empty";
 
