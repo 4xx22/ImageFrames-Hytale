@@ -1,13 +1,17 @@
-# Hytale 0.7.2 migration
+# Hytale 0.7.3 migration
 
 The previous version references removed Hytale vector classes and column-based
-block methods. Those calls fail to compile against 0.7.2, and an older compiled
-JAR can fail with linkage errors during startup or interaction.
+block methods. Those calls fail to compile against 0.7.2 and later, and an older
+compiled JAR can fail with linkage errors during startup or interaction.
+
+The plugin compiles and passes its tests against 0.7.3 without source changes.
+Only the pinned server version moves from 0.7.2, so the server no longer warns
+that the plugin targets an older release.
 
 The migration uses JOML vectors, Hytale rotation types, `SectionReader` and
 `BlockOperations`. It also updates runtime pack registration to use
 `AssetPack.PackSource.RUNTIME` and declares the valid exact server range
-`=0.7.2`. Gradle targets Java 25 and resolves server API version 0.7.2 explicitly.
+`=0.7.3`. Gradle targets Java 25 and resolves server API version 0.7.3 explicitly.
 
 Runtime textures and models are restored before registering the runtime pack,
 then block types are loaded before worlds start. This ordering matters because
@@ -26,8 +30,8 @@ loaded. Rotation reads no longer rely on reflection over old chunk internals.
 - Build and regression tests: `./gradlew build` with JDK 25. Tests cover manifest
   version-range parsing, legacy stored IDs and positions, cross-section tile
   coordinates at negative Y, image limits, alpha decoding and cache eviction.
-- Server reference: the official release 0.7.2 JAR, revision
-  `d769dc3d57881261a62858e1394f0e4de9a21eca`.
+- Server reference: the official release 0.7.3 JAR, revision
+  `e1a1986a6f9db589637f1d6aa675a6920cd5b798`.
 - Asset validation in an isolated working directory, with the built plugin in
   `mods/` and the game's `Assets.zip`:
 
@@ -35,7 +39,8 @@ loaded. Rotation reads no longer rely on reflection over old chunk internals.
   java --enable-native-access=ALL-UNNAMED -Xmx4G -jar HytaleServer.jar --assets Assets.zip --auth-mode offline --bind 127.0.0.1:0 --disable-sentry --bare --validate-assets --shutdown-after-validate --log INFO
   ```
 
-- Headless server exercise with a temporary test plugin: generate and place 2x2
+- Headless server exercise (run against 0.7.2, not repeated for 0.7.3) with a
+  temporary test plugin: generate and place 2x2
   frames, panels and banners in a cubic world, including X/Z section boundaries,
   Y=-33 and Y=352; preserve panel/banner rotations; restart with the same saved
   world and image cache, verify every tile and rotation, then remove each group

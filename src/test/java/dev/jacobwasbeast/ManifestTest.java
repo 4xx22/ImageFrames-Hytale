@@ -16,7 +16,7 @@ class ManifestTest {
             assertNotNull(input);
             var manifest = JsonParser.parseReader(new InputStreamReader(input, StandardCharsets.UTF_8)).getAsJsonObject();
             var range = SemverRange.fromString(manifest.get("ServerVersion").getAsString());
-            assertTrue(range.satisfies(Semver.fromString("0.7.2")));
+            assertTrue(range.satisfies(Semver.fromString("0.7.3")));
             assertFalse(range.satisfies(Semver.fromString("0.6.9")));
             assertFalse(range.satisfies(Semver.fromString("0.8.0")));
         }

@@ -123,9 +123,9 @@ You can craft Image Frames and Panels at a **Furniture Bench**.
 1.  Install JDK 25 and build the project using `./gradlew build` (`gradlew.bat build` on Windows).
 2.  Place the generated JAR file into your Hytale's `mods` directory.
 
-## Hytale 0.7.2 compatibility
+## Hytale 0.7.3 compatibility
 
-This version targets **Hytale 0.7.2**. Gradle downloads the pinned server API from
+This version targets **Hytale 0.7.3**. Gradle downloads the pinned server API from
 Hytale's official release Maven repository, so building and running the unit tests
 does not require a local game installation. A game installation is still required
 for the IDE server launch configurations; use `-Phytale_home=...` for a custom path.
@@ -146,5 +146,5 @@ its disk cache when evicting entries. Oversized saved layouts are rejected befor
 world loading; their saved data is retained.
 
 Run `./gradlew build` to compile, package and execute the regression tests. See
-[the 0.7.2 validation notes](docs/hytale-0.7.2.md) for server checks and remaining
+[the 0.7.3 validation notes](docs/hytale-0.7.3.md) for server checks and remaining
 manual verification.

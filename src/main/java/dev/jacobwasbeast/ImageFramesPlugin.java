@@ -76,7 +76,7 @@ public class ImageFramesPlugin extends JavaPlugin {
                 refreshWorld(world);
             }
         });
-        getLogger().at(Level.INFO).log("ImageFrames initialized for Hytale 0.7.2.");
+        getLogger().at(Level.INFO).log("ImageFrames initialized for Hytale 0.7.3.");
     }
 
     private void refreshWorld(World world) {
